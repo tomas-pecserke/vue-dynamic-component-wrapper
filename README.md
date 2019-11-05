@@ -2,6 +2,9 @@
 
 Reactive wrapper for dynamically loaded Vue.js 2 components.
 
+[![](https://github.com/tomas-pecserke/vue-dynamic-component-wrapper/workflows/Node%20CI/badge.svg)](https://github.com/tomas-pecserke/vue-dynamic-component-wrapper/actions?query=workflow%3A%22Node+CI%22)
+[![GitHub license](https://img.shields.io/github/license/tomas-pecserke/vue-dynamic-component-wrapper)](https://github.com/tomas-pecserke/vue-dynamic-component-wrapper/blob/master/LICENSE)
+
 ## Installation
 
 ```shell script
