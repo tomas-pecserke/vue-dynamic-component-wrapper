@@ -1,4 +1,4 @@
-import { mount, shallowMount } from "@vue/test-utils";
+import { shallowMount } from "@vue/test-utils";
 import { DynamicComponent } from "../../src/DynamicComponent";
 import { ComponentLoader } from "../../src/index";
 import { Component } from "vue";
