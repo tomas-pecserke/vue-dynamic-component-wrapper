@@ -1,10 +1,7 @@
-import Vue, { Component } from "vue";
+import Vue, { Component, VueConstructor } from "vue";
+import { ComponentLoader } from "./index";
 
-export interface ComponentLoader {
-  load(name: string): Promise<Component>;
-}
-
-export function DynamicComponent(loader: ComponentLoader) {
+export const DynamicComponent = (loader: ComponentLoader): VueConstructor => {
   let resolveComponent: (component: Component<any, any, any, any>) => void;
   let rejectComponent: (reason: any) => void;
 
@@ -16,7 +13,6 @@ export function DynamicComponent(loader: ComponentLoader) {
         rejectComponent = reject;
       }
     },
-    template: '<component is="ChildComponent" v-bind="$attrs"></component>',
     props: {
       name: {
         type: String,
@@ -28,6 +24,7 @@ export function DynamicComponent(loader: ComponentLoader) {
         .load(this.name)
         .then(resolveComponent)
         .catch(rejectComponent);
-    }
+    },
+    template: '<component is="ChildComponent" v-bind="$attrs"></component>'
   });
-}
+};
